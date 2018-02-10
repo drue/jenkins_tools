@@ -3,7 +3,7 @@
 
 /** @return The tag name, or `null` if the current commit isn't a tag. */
 String name() {
-    commit = getCommit()
+    commit = commit()
     if (commit) {
         desc = sh(script: "git describe --tags ${commit}", returnStdout: true)?.trim()
         if (is_tag(desc)) {
